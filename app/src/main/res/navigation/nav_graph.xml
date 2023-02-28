@@ -9,5 +9,20 @@
         android:id="@+id/newsListFragment"
         android:name="com.hk.news.featureNewsList.ui.NewsListFragment"
         android:label="BBC News"
-        tools:layout="@layout/fragment_news_list" />
+        tools:layout="@layout/fragment_news_list">
+        <action
+            android:id="@+id/action_newsListFragment_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="com.hk.news.featureNewsDetails.ui.NewsDetailsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_news_details">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>

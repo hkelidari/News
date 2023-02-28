@@ -2,6 +2,7 @@ package com.hk.news.core.data.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.hk.news.featureNewsDetails.domain.model.NewsDetails
 import com.hk.news.featureNewsList.domain.model.News
 
 @Entity
@@ -18,6 +19,14 @@ data class NewsEntity(
     fun toNews() = News(
         id = id,
         title = title,
+        urlToImage = urlToImage
+    )
+
+    fun toNewsDetails() = NewsDetails(
+        id = id,
+        title = title,
+        description = description,
+        content = content,
         urlToImage = urlToImage
     )
 }

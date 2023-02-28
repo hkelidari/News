@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.hk.news.R
 import com.hk.news.core.ui.collectOn
+import com.hk.news.core.ui.safeNavigate
 import com.hk.news.core.ui.viewBinding
 import com.hk.news.databinding.FragmentNewsListBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,7 +29,9 @@ class NewsListFragment : Fragment(R.layout.fragment_news_list) {
 
         // region initRecyclerView
         val adapter = NewsListAdapter { news ->
-
+            safeNavigate(
+                NewsListFragmentDirections.actionNewsListFragmentToNewsDetailsFragment(news.id)
+            )
         }
         binding.newsList.let { newsList ->
             newsList.adapter = adapter

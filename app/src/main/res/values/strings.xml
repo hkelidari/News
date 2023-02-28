@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">News</string>
+    <string name="btn_retry">Retry</string>
+    <string name="desc_news_img">News Image</string>
+    <string name="msg_connect_to_internet">Please connect to the Internet.</string>
+    <string name="msg_general_remote_exception">Something went wrong!</string>
 </resources>

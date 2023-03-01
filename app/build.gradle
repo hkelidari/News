@@ -50,6 +50,11 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    packagingOptions {
+        resources {
+            excludes += ["META-INF/LICENSE.md", "META-INF/LICENSE-notice.md"]
+        }
+    }
 }
 
 dependencies {
@@ -100,16 +105,16 @@ dependencies {
 
     // Test
     testImplementation "junit:junit:$junit_version"
-    testImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin_version"
-    testImplementation "androidx.arch.core:core-testing:$arch_testing_version"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
     testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+    testImplementation "io.mockk:mockk:${mockk_version}"
+    testImplementation "app.cash.turbine:turbine:$turbine_version"
 
     // Android Test
     androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
-    androidTestImplementation "androidx.arch.core:core-testing:$arch_testing_version"
     androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
-    androidTestImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin_version"
-    androidTestImplementation "org.mockito:mockito-android:$mockito_android_version"
+    androidTestImplementation "io.mockk:mockk:${mockk_version}"
+    androidTestImplementation "io.mockk:mockk-android:${mockk_version}"
+    androidTestImplementation "app.cash.turbine:turbine:$turbine_version"
 }
